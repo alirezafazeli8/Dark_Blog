@@ -1,0 +1,179 @@
+@import "reset.scss";
+@import "icon.scss";
+@import "variable.scss";
+@import "mixin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// body style
+body {
+    background-color: $dark_color;
+    padding: 50px 50px;
+    height: 100vh;
+
+    // body - mobile responsive
+    @include mQ(320px, 500px) {
+        padding: 20px 20px;
+    }
+}
+
+// main style
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+
+    // main container - mobile responsive
+    @include mQ(320px, 500px) {
+        display: flex;
+       flex-direction: column-reverse;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+    }
+
+    // main container - tablet responsive
+    @include mQ(501px, 1024px) {
+        display: flex;
+       flex-direction: column-reverse;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+    }
+    .posts {
+        padding: 20px;
+        line-height: 1.6em;
+
+        // main container > posts - mobile responsive
+        @include mQ(320px, 500px) {
+            margin-top: 20px;
+            padding: 0;
+        }
+
+        h2 {
+            color: $main_purple;
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+
+        p {
+            color: $soft_gray;
+            width: 90%;
+            font-size: 22px;
+
+            // main container > posts > p - tablet responsive
+            @include mQ(501px, 1024px) {
+                margin: auto;
+            }
+        }
+    }
+}
+
+// ___________
+main , footer {
+    margin-top: 50px;
+
+    // footer - tablet responsive
+    @include mQ(501px, 1024px) {
+        footer {
+            margin-top: 10px;
+        }
+    }
+} 
+
+// illustrator style
+.main-ilus {
+    img {
+        height: 370px;
+
+        // main illus > img - mobile responsive
+        @include mQ(320px, 500px) {
+            height: 200px;
+        }
+    }
+}
+
+// footer style
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+    border-top: 3px $soft_gray solid;
+    
+    // main footer - mobile responsive
+    @include mQ(320px, 500px) {
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    // main footer - tablet responsive 
+    @include mQ(501px, 1024px) {
+        padding: 10px;
+    }
+
+    ul {
+        display: flex;
+        padding: 20px 0;
+
+        //main footer > ul - mobile responsive
+        @include mQ(320px, 500px) {
+            padding: 0;
+            flex-direction: column;
+        }
+
+        li {
+            font-size: 22px;
+            margin-left: 10px;
+            &:first-child {
+                margin: 0;
+            }
+
+            a {
+                color: $soft_gray_2;
+            }
+            
+            // main footer > li - mobile responsive
+            @include mQ(320px, 500px) {
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .footer-navigation {
+        margin-top: 20px;
+    }
+
+    .footer-logo {
+        display: flex;
+        padding: 20px 0;
+        margin-top: 20px;
+
+        // footer logo - mobile responsive
+        @include mQ(320px, 500px) {
+            padding: 10px 0;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-top: 2px $soft_gray solid;
+            width: 100%;
+        }
+        i { 
+            color: $gray;
+        }
+        a {
+            margin-right: 10px;
+            &:last-child {
+                margin: 0;
+            }
+
+            // footer logo > a - mobile responsive
+            @include mQ(320px, 500px) {
+                padding: 10px 0;
+            }
+        }
+    }
+}
